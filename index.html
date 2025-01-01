@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  
+  <style>
+  
+  body {
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
+    background-image:url('b2.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 685px;
+    position: relative;
+  }
+
+  .stbox {
+    width: 86%;
+    height: 120px;
+    background-color: red;
+    box-sizing: border-box;
+    margin-left: 7%;
+    position: relative;
+    margin-top: 27px;
+  }
+
+  .nd {
+    width: 86%;
+    height: 200px;
+    background-color: white;
+    box-sizing: border-box;
+    margin-left: 7%;
+    margin-top: 5px;
+  }
+
+  .border1 {
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    width: 50%;
+    height: 150px;
+    background-color: green;
+    box-sizing: border-box;
+    margin-left: 25%;
+    background-image: url('l1.gif');
+    background-size: 100% 100%;
+  }
+
+  .img1,
+  .img2 {
+    width: 100%;
+    height: 100%;
+  }
+
+  #box {
+    visibility: hidden;
+  }
+
+  #btn {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    background-color: green;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    box-sizing: bn border-box;
+  }
+  
+  #inputvalue{
+  width:80%;
+  height:40px;
+  margin-top:30px;
+  box-sizing: bn border-box;
+  padding: 10px;
+  font-weight:bold;
+  }
+  
+  .name{
+   color:red;
+   animation:new 1s infinite;
+  }
+  
+  @keyframes new{
+  
+   0%{ color:red;}
+  10%{ color:green;}
+  20%{ color:blue;}
+  30%{ color:yellow;}
+  40%{ color:white;}
+  50%{ color:black;}
+  60%{ color:brown;}
+  70%{ color:red;}
+  80%{ color:pink;}
+  90%{ color:green;}
+  100%{ color:red;}
+
+  
+  }
+  
+  p{
+      margin-top: 39px ;
+      font-weight: bold;
+      font-size: 10px;
+  }
+  
+  </style>
+    
+</head>
+
+<body>
+    
+  <center>
+      <input type="text" id="inputvalue" required="required" oninput="enableButton()" placeholder="Enter Your Name ">
+     
+      <button onclick="stp()" id="btn" disabled>Click</button>
+  </center>  
+
+
+  <nav id="box">
+    <div class="nd">
+      <img src="img.png" class="img2" />
+    </div>
+  
+    <center>
+    🔥🔥🔥🔥🔥🔥🔥
+      <h2 id="nam" class="name" > Name: </h2>
+      👇👇👇👇👇
+    </center>
+  
+    <div class="stbox">
+      <img src="l2.gif" class="img1" />
+    </div>
+  
+  </nav>
+  
+  
+  
+
+  <script>
+    var a = document.getElementById("box");
+    var b = document.getElementById("btn");
+    var audio;
+    
+
+    // Function to enable the button when input has a value
+    
+    function enableButton() {
+      var inputValue = document.getElementById('inputvalue').value;
+      // Enable the button if the input is not empty
+      if (inputValue.trim() !== "") {
+        b.disabled = false; // Enable the button
+      } else {
+        b.disabled = true; // Disable the button if the input is empty
+      }
+    }
+
+    function stp() {
+    
+      // Get input value first
+      const c = document.getElementById('inputvalue').value;
+
+      // Set the value of h2 to the input value
+      document.getElementById('nam').innerText = "Name: " + c;
+
+      // Make the box visible and hide the button
+      a.style.visibility = "visible";
+      b.style.visibility = "hidden";
+      
+      // Play the audio
+      audio = new Audio("song.mp3");
+      audio.play();
+      
+      document.getElementById("inputvalue").style.visibility="hidden";
+      
+      
+      
+    }
+  </script>
+  
+  <center>
+       <p> Created by: Raj Kumar </p>
+  </center>
+ 
+</body>
+
+</html>
